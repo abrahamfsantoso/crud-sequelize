@@ -14,13 +14,13 @@ module.exports = (sequelize, DataTypes) => {
   Pemasok.init(
     {
       nama: DataTypes.STRING,
+      image: DataTypes.STRING,
     },
     {
       sequelize,
       paranoid: true,
       timestamps: true,
       freezeTableName: true,
-      
 
       modelName: "Pemasok",
     }

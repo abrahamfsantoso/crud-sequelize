@@ -4,6 +4,7 @@ const app = express();
 const transaksiRoutes = require("./routes/transaksiRoutes.js");
 const barangRoutes = require("./routes/barangRoutes");
 const pelangganRoutes = require("./routes/pelangganRoutes");
+const pemasokRoutes = require("./routes/pemasokRoutes");
 
 //Set body parser for HTTP post operation
 app.use(express.json()); // support json encoded bodies
@@ -20,6 +21,7 @@ require("./utils/associations");
 app.use("/transaksi", transaksiRoutes); 
 app.use("/barang", barangRoutes);
 app.use("/pelanggan", pelangganRoutes);
+app.use("/pemasok", pemasokRoutes);
 
 const PORT = 3000 || process.env.PORT;
 app.listen(PORT, () =>

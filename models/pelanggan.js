@@ -14,9 +14,15 @@ module.exports = (sequelize, DataTypes) => {
   Pelanggan.init(
     {
       nama: DataTypes.STRING,
-      image: DataTypes.STRING,
+      image: {
+        type: DataTypes.STRING,
+        //Set custom getter for book image using URL
+        get() {
+          const image = this.getDataValue("image");
+          return "/images/" + image;
+        },
     },
-    {
+  },{
       sequelize,
       paranoid: true,
       timestamps: true,
